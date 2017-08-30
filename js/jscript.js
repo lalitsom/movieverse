@@ -33,11 +33,17 @@ jsonObj ="";
 function updateList(jsonData){
     jsonObj = JSON.parse(jsonData);
     total_results = jsonObj.total_results;
+    if(total_results>10){
+      total_results =10;
+    }
     console.log(total_results);
     resultList = document.getElementById('result_list');
     result_str="";
+    img_baseurl = "http://image.tmdb.org/t/p/w185/";
     for(let i=0;i<total_results;i++){
-      result_str += "<li><h3>"+jsonObj.results[i].title+"</h3>"+jsonObj.results[i].overview+"</li>"
+      img_path = img_baseurl + jsonObj.results[i].poster_path;
+      console.log(img_path);
+      result_str += "<li class='movie_element'><img src="+img_path+"> <h3>"+jsonObj.results[i].title+"</h3>"+jsonObj.results[i].overview+"</li>"
     }
 
     resultList.innerHTML = result_str;
