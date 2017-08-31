@@ -1,3 +1,50 @@
-.movie_element{
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e5e5e6;
+}
+
+.wrapper{
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.movie_element {
   margin-top: 50px;
+}
+
+.sidebar{
+  height: 100%;
+  width: 20%;
+  background-color: #e5e5e6;
+  padding: 5px;
+  float: left;
+  overflow-y: scroll;
+}
+.right-bar{
+  height: 100%;
+  width: 80%;
+  padding: 5px;
+  background-color:#313340;
+  background-image: url('../img/bg.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  float: right;
+  overflow: hidden;
+}
+
+.footer{
+  vertical-align: bottom;
+  float: right;
+  font-size: 1px;
+  color: white;
+}
+
+.big{
+  font-size: 40px;
+  color: white;
+}
+
+.btn:focus{
+  color:black;
 }
