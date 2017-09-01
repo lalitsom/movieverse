@@ -70,9 +70,9 @@ function addToCollarge (imgElement) {
 }
 
 function getNextDiv () {
-  allCollargeImg = document.getElementsByClassName('collarge-img')
-  for ( let item of allCollargeImg){
-    if (item.src.indexOf('.jpg') === -1){
+  var allCollargeImg = document.getElementsByClassName('collarge-img')
+  for (let item of allCollargeImg) {
+    if (item.src.indexOf('.jpg') === -1) {
       return item
     }
   }
@@ -80,5 +80,5 @@ function getNextDiv () {
 }
 
 function removeFromCollarge (imgElement) {
-  imgElement.src='';
+  imgElement.src = ''
 }
