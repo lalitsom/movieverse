@@ -44,6 +44,9 @@ body {
   font-size: 40px;
   color: white;
 }
+.subtext{
+  font-size: 22px;
+}
 
 .btn:focus{
   color:black;
