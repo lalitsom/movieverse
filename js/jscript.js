@@ -51,7 +51,7 @@ function updateList (jsonData) {
       continue
     }
     var imgPath = imgBaseUrl + (jsonObj.results[i].poster_path || jsonObj.results[i].profile_path)
-    resultStr += '<li class="movie_element"><img src=' +
+    resultStr += '<li class="movie_element"><img onclick="addToCollarge(this)" src=' +
     imgPath + '> <h3>' + (jsonObj.results[i].title || jsonObj.results[i].name) + '</h3></li>'
   }
 
@@ -63,4 +63,22 @@ function setCategory (option) {
   document.getElementById('query_input').placeholder = 'Search ' + option.innerHTML + '...'
   document.getElementById('query_input').value = ''
   document.getElementById('result_list').innerHTML = ''
+}
+
+function addToCollarge (imgElement) {
+  getNextDiv().src = imgElement.src
+}
+
+function getNextDiv () {
+  allCollargeImg = document.getElementsByClassName('collarge-img')
+  for ( let item of allCollargeImg){
+    if (item.src.indexOf('.jpg') === -1){
+      return item
+    }
+  }
+  return allCollargeImg[0]
+}
+
+function removeFromCollarge (imgElement) {
+  imgElement.src='';
 }

@@ -48,3 +48,15 @@ body {
 .btn:focus{
   color:black;
 }
+
+.collarge-container{
+  max-width: 80%;
+}
+
+.collarge-item{
+  min-height: 278px;  
+}
+
+.collarge-img{
+  max-width: 100%;
+}
