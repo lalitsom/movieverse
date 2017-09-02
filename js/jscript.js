@@ -51,8 +51,10 @@ function updateList (jsonData) {
       continue
     }
     var imgPath = imgBaseUrl + (jsonObj.results[i].poster_path || jsonObj.results[i].profile_path)
-    resultStr += '<li class="movie_element"><img onclick="addToCollage(this)" src=' +
-    imgPath + '> <h3>' + (jsonObj.results[i].title || jsonObj.results[i].name) + '</h3></li>'
+    resultStr += '<li class="movie_element"><div class="container"><img class="list_image" src=' +
+    imgPath + '> <div class="overlay" onclick="addToCollage(this)" data-imgsrc= ' + imgPath +
+    '> <div class="text"> + Add To Collage</div> </div>    </div> <h3 class="wrap-word">'
+     + (jsonObj.results[i].title || jsonObj.results[i].name) + '</h3></li>'
   }
 
   resultList.innerHTML = resultStr
@@ -64,9 +66,10 @@ function setCategory (option) {
   document.getElementById('query_input').value = ''
   document.getElementById('result_list').innerHTML = ''
 }
-
+tmp=''
 function addToCollage (imgElement) {
-  getNextDiv().src = imgElement.src
+  tmp = imgElement;
+  getNextDiv().src = imgElement.dataset.imgsrc
 }
 
 function getNextDiv () {
