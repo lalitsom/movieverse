@@ -52,14 +52,14 @@ body {
   color:black;
 }
 
-.collarge-container{
+.collage-container{
   max-width: 80%;
 }
 
-.collarge-item{
+.collage-item{
   min-height: 278px;
 }
 
-.collarge-img{
+.collage-img{
   max-width: 100%;
 }
